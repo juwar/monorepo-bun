@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo/backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target node"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.2.0",
+    "elysia": "^0.8.17"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

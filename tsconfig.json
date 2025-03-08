@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@monorepo/frontend": ["./packages/frontend/src"],
+      "@monorepo/frontend/*": ["./packages/frontend/src/*"],
+      "@monorepo/backend": ["./packages/backend/src"],
+      "@monorepo/backend/*": ["./packages/backend/src/*"]
+    }
+  }
+}
