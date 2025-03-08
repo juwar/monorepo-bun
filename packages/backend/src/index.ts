@@ -1,5 +1,6 @@
 import { Elysia, t } from 'elysia';
 import { cors } from '@elysiajs/cors';
+import swagger from '@elysiajs/swagger';
 
 // Define our API types that can be imported by the frontend
 export type Todo = {
@@ -21,6 +22,7 @@ const app = new Elysia()
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
   }))
+  .use(swagger())
   .get('/', () => 'Hello from Elysia Backend!')
   
   // Todos API

@@ -2,15 +2,16 @@
   "name": "@monorepo/backend",
   "version": "1.0.0",
   "type": "module",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "bun run --watch src/index.ts",
-    "build": "tsc && bun build src/index.ts --outdir dist --target node",
+    "build": "bun run build:types && bun build src/index.ts --outdir dist --target node",
     "build:types": "tsc --emitDeclarationOnly"
   },
   "dependencies": {
     "@elysiajs/cors": "^1.2.0",
+    "@elysiajs/swagger": "^1.2.2",
     "elysia": "^1.2.25"
   },
   "devDependencies": {
