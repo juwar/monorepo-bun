@@ -1,12 +1,12 @@
-import { edenTreaty } from '@elysiajs/eden';
+import { treaty } from '@elysiajs/eden'
 import type { App } from '@monorepo/backend';
 
 // Create the Eden client to connect to the backend
-export const api = edenTreaty<App>('http://localhost:3000');
+export const $api = treaty<App>('http://localhost:3000');
 
 // Helper functions for the API
 export const getTodos = async () => {
-  const response = await api.api.todos.get();
+  const response = await $api.api.todos.index.get()
   
   if (response.error) {
     console.error('Error fetching todos:', response.error);
@@ -17,7 +17,7 @@ export const getTodos = async () => {
 };
 
 export const getUsers = async () => {
-  const response = await api.api.users.get();
+  const response = await $api.api.users.index.get();
   
   if (response.error) {
     console.error('Error fetching users:', response.error);
@@ -28,7 +28,7 @@ export const getUsers = async () => {
 };
 
 export const createTodo = async (text: string, completed: boolean = false) => {
-  const response = await api.api.todos.post({
+  const response = await $api.api.todos.index.post({
     text,
     completed
   });
