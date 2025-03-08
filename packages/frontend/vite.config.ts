@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@monorepo/backend': resolve(__dirname, '../backend/src')
+      '@monorepo/backend': resolve(__dirname, '../backend/dist')
     }
   },
   server: {
