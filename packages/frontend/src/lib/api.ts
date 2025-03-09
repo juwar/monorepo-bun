@@ -1,8 +1,9 @@
 import { treaty } from '@elysiajs/eden'
 import type { App } from '@monorepo/backend';
+import {env} from '../env'
 
 // Create the Eden client to connect to the backend
-export const $api = treaty<App>('http://localhost:3000');
+export const $api = treaty<App>(env?.VITE_API_BASE_URL|| 'http://localhost:3000');
 
 // Helper functions for the API
 export const getTodos = async () => {
