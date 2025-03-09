@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "bun run build:types && bun run --watch src/index.ts",
     "dev:types": "tsc --emitDeclarationOnly --watch",
-    "build": "bun run build:types && bun build src/index.ts --outdir dist --target node",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
+    "build:bundle": "bun run build:types && bun build src/index.ts --outdir dist --target node",
+    "build:types": "tsc src/index.ts --declaration --emitDeclarationOnly --outDir dist --skipLibCheck --noEmitOnError false --isolatedModules"
   },
   "dependencies": {
     "@elysiajs/cors": "^1.2.0",
